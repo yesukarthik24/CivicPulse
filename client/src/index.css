@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #07090E;
+    color: #F1F5F9;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(11, 15, 25, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.15);
+}
+
+.glass-card {
+  background: rgba(18, 24, 39, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(18, 24, 39, 0.85);
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07090E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F293D;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06B6D4;
+}
+
+/* Leaflet Dark Map Tile Styling */
+.leaflet-container {
+  background: #07090E !important;
+  font-family: 'Inter', sans-serif !important;
+  width: 100%;
+  height: 100%;
+}
+
+.dark-tiles .leaflet-tile {
+  filter: brightness(0.65) invert(1) contrast(1.35) hue-rotate(190deg) saturate(0.65);
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(11, 15, 25, 0.95) !important;
+  color: #F1F5F9 !important;
+  border: 1px solid rgba(6, 182, 212, 0.3) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  border-radius: 12px !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(11, 15, 25, 0.95) !important;
+}
+
+/* Pulse Glow Effects */
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: radarSweep 12s linear infinite;
+}
